@@ -56,10 +56,64 @@ namespace ProductTask.Domain.ViewModels
 		}
 
 
+
+		private ObservableCollection<Order> allOrders;
+
+		public ObservableCollection<Order> AllOrders
+		{
+			get { return allOrders; }
+			set { allOrders = value; OnPropertyChanged(); }
+		}
+
+
+
+		private ObservableCollection<string> customersName;
+
+		public ObservableCollection<string> CustomersName
+		{
+			get { return customersName; }
+			set { customersName = value; OnPropertyChanged(); }
+		}
+
+		private string name;
+
+		public string Name
+		{
+			get { return name; }
+			set { name = value;OnPropertyChanged(); }
+		}
+
+
+
 		public ShowAllClientViewModel()
 		{
 			var customersFromDataBase = App.DB.CustomerRepository.GetAllData();
 			AllCustomers = new ObservableCollection<Customer>(customersFromDataBase);
+
+
+			var ordersfromdatabase = App.DB.orderRepository.GetAllData(); 
+			AllOrders = new ObservableCollection<Order>(ordersfromdatabase);
+
+
+			
+
+
+			//CustomersName = new ObservableCollection<string>();
+
+			//for (int i = 0; i < AllCustomers.Count; i++)
+			//{
+			//	for (int k = 0; k < AllOrders.Count; k++)
+			//	{
+			//		if (AllCustomers[i].CustomerID == AllOrders[k].CustomerID)
+			//		{
+			//			CustomersName.Add(AllCustomers[i].ContactName);	
+			//		}
+			//	}
+			//}
+
+			Name= string.Empty;
+
+			Name = "A";
 
 
 			//var allproducts = App.DB.ProductRepository.GetAllData();

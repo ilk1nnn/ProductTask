@@ -89,12 +89,14 @@
     <Compile Include="DataAccess\Abstractions\ICategoryRepository.cs" />
     <Compile Include="DataAccess\Abstractions\ICustomerRepository.cs" />
     <Compile Include="DataAccess\Abstractions\IOrderDetailsRepository.cs" />
+    <Compile Include="DataAccess\Abstractions\IOrderRepository.cs" />
     <Compile Include="DataAccess\Abstractions\IProductRepository.cs" />
     <Compile Include="DataAccess\Abstractions\IRepository.cs" />
     <Compile Include="DataAccess\Abstractions\IUnitOfWork.cs" />
     <Compile Include="DataAccess\Concretes\CategoryRepository.cs" />
     <Compile Include="DataAccess\Concretes\CustomerRepository.cs" />
     <Compile Include="DataAccess\Concretes\OrderDetailsRepository.cs" />
+    <Compile Include="DataAccess\Concretes\OrderRepository.cs" />
     <Compile Include="DataAccess\Concretes\ProductRepository.cs" />
     <Compile Include="DataAccess\Concretes\UnitOfWork.cs" />
     <Compile Include="DataAccess\Entities\Category.cs" />

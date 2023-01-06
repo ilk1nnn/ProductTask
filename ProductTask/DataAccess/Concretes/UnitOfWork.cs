@@ -16,5 +16,7 @@ namespace ProductTask.DataAccess.Concretes
         public IOrderDetailsRepository OrderDetailsRepository => new OrderDetailsRepository();
 
         public ICustomerRepository CustomerRepository => new CustomerRepository();
+
+        public IOrderRepository orderRepository => new OrderRepository();
     }
 }

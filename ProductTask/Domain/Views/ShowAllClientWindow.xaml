@@ -8,7 +8,7 @@
         WindowStartupLocation="CenterScreen"
         Title="ShowAllClientWindow" Height="450" Width="870">
     <Grid Background="Chocolate">
-        <ListView Margin="10" ItemsSource="{Binding AllCustomers}">
+        <ListView Margin="10" ItemsSource="{Binding AllOrders}">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="CustomerID" Width="80">
@@ -18,38 +18,17 @@
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
-                    <GridViewColumn Header="ContactName" Width="180">
+                    <GridViewColumn Header="OrderID" Width="180">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBlock FontSize="18" HorizontalAlignment="Center" Padding="5,2" Text="{Binding ContactName}"></TextBlock>
+                                <TextBlock FontSize="18" HorizontalAlignment="Center" Padding="5,2" Text="{Binding OrderID}"></TextBlock>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
-                    <GridViewColumn Header="Country" Width="170">
+                    <GridViewColumn Header="ShipName" Width="500">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBlock FontSize="18" HorizontalAlignment="Center" Padding="5,2" Text="{Binding Country}"></TextBlock>
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
-                    <GridViewColumn Header="City" Width="150">
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <TextBlock FontSize="18" HorizontalAlignment="Center" Padding="5,2" Text="{Binding City}"></TextBlock>
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
-                    <GridViewColumn Header="Phone" Width="150">
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <TextBlock FontSize="18" HorizontalAlignment="Center" Padding="5,2" Text="{Binding Phone}"></TextBlock>
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
-                    <GridViewColumn Header="PostalCode" Width="80">
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <TextBlock FontSize="18" HorizontalAlignment="Center" Padding="5,2" Text="{Binding PostalCode}"></TextBlock>
+                                <TextBlock FontSize="18" HorizontalAlignment="Center" Padding="5,2" Text="{Binding ShipName}"></TextBlock>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>

@@ -11,7 +11,7 @@ namespace ProductTask.DataAccess.Abstractions
         ICategoryRepository CategoryRepository { get; }
         IProductRepository ProductRepository { get; }
         IOrderDetailsRepository OrderDetailsRepository { get; }
-
+        IOrderRepository orderRepository { get; }
         ICustomerRepository CustomerRepository { get; }
     }
 }

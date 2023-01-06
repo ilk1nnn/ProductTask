@@ -82,29 +82,95 @@ namespace ProductTask.Domain.ViewModels
 
             OrderCommand = new RelayCommand(o =>
             {
+                //for (int i = 0; i < AllProducts.Count; i++)
+                //{
+                //    if((ProductName.Text == AllProducts[i].ProductName && int.Parse(Quantity.Text) <= AllProducts[i].UnitsInStock))
+                //    {
+                //        for (int k = 0; k < AllCustomers.Count; k++)
+                //        {
+                //            if(CustomerName.Text == AllCustomers[k].ContactName)
+                //            {
+                //                MessageBox.Show($@"Congratulations! Order was created Successfully! Person Who bought is {CustomerName.Text}.
+                //                                   He bought {ProductName.Text}. Quantity : {Quantity.Text}");
+                //            }
+                //        }
+                //    }
+                //    else if(ProductName.Text == AllProducts[i].ProductName && int.Parse(Quantity.Text) > AllProducts[i].UnitsInStock)
+                //    {
+                //        MessageBox.Show("Wrong Quantity Input!");
+                //    }
+                //    else if ((ProductName.Text != AllProducts[i].ProductName && i == AllProducts.Count-1) && int.Parse(Quantity.Text) <= AllProducts[i].UnitsInStock)
+                //    {
+                //        MessageBox.Show("Wrong ProductName Input!");
+                //    }
+
+                //}
+
+
+                var pid = 0;
                 for (int i = 0; i < AllProducts.Count; i++)
                 {
-                    if((ProductName.Text == AllProducts[i].ProductName && int.Parse(Quantity.Text) <= AllProducts[i].UnitsInStock))
+                    if (productName.Text == AllProducts[i].ProductName)
                     {
-                        for (int k = 0; k < AllCustomers.Count; k++)
-                        {
-                            if(CustomerName.Text == AllCustomers[k].ContactName)
-                            {
-                                MessageBox.Show($@"Congratulations! Order was created Successfully! Person Who bought is {CustomerName.Text}.
-                                                   He bought {ProductName.Text}. Quantity : {Quantity.Text}");
-                            }
-                        }
+                        pid = AllProducts[i].ProductID;
                     }
-                    else if(ProductName.Text == AllProducts[i].ProductName && int.Parse(Quantity.Text) > AllProducts[i].UnitsInStock)
-                    {
-                        MessageBox.Show("Wrong Quantity Input!");
-                    }
-                    else if ((ProductName.Text != AllProducts[i].ProductName && i == AllProducts.Count-1) && int.Parse(Quantity.Text) <= AllProducts[i].UnitsInStock)
-                    {
-                        MessageBox.Show("Wrong ProductName Input!");
-                    }
-                   
                 }
+
+
+                var cid = string.Empty;
+                for (int k = 0; k < AllCustomers.Count; k++)
+                {
+                    if (customerName.Text == AllCustomers[k].ContactName)
+                    {
+                        cid = AllCustomers[k].CustomerID;
+                    }
+                }
+
+
+
+
+
+                Order order = new Order
+                {
+                    OrderID = pid,
+                    CustomerID = cid,
+                    ShipName = productName.Text
+                };
+
+
+
+                //for (int i = 0; i < AllProducts.Count; i++)
+                //{
+                //    for (int k = 0; k < AllCustomers.Count; k++)
+                //    {
+
+                //        if (pid == AllProducts[i].ProductID && short.Parse(Quantity.Text) <= AllProducts[i].UnitsInStock && CustomerName.Text == AllCustomers[k].ContactName)
+                //        {
+                //            AllProducts[i].UnitsInStock -= short.Parse(Quantity.Text);
+                //        }
+                //        if (pid == AllProducts[i].ProductID && short.Parse(Quantity.Text) >= AllProducts[i].UnitsInStock)
+                //        {
+                //            MessageBox.Show("Wrong!");
+                //            break;
+                //        }
+                //        if (pid == AllProducts[i].ProductID && CustomerName.Text == AllCustomers[k].ContactName)
+                //        {
+                //            MessageBox.Show("Wrong!");
+                //            break;
+                //        }
+
+                //    }
+                //}
+
+
+                App.DB.orderRepository.AddData(order);
+
+
+
+                MessageBox.Show("Order Added Successfully!");
+
+
+
             });
 
 

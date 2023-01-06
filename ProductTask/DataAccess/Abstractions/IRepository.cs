@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ProductTask.DataAccess.Abstractions
 {
-    public interface IRepository<T>
+    public interface IOrderRepository<T>
     {
         T GetData(int id);
         IEnumerable<T> GetAllData();

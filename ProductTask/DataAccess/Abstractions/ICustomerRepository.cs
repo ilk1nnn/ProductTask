@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ProductTask.DataAccess.Abstractions
 {
-    public interface ICustomerRepository : IRepository<Customer>
+    public interface ICustomerRepository : IOrderRepository<Customer>
     {
     }
 }

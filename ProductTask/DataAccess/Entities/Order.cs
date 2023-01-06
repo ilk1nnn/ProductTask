@@ -9,6 +9,7 @@ namespace ProductTask.DataAccess.Entities
     public class Order
     {
         public int OrderID { get; set; }
-        public int CustomerID { get; set; }
+        public string CustomerID { get; set; }
+        public string ShipName { get; set; }
     }
 }
